@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>reveal.js</title>
+
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/black.css">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css">
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<h2>Cross Site Scripting</h2>
+				<h4>XSS</h4>
+				<img src="https://c.tenor.com/SoBzDkrJuNUAAAAC/cat-hack.gif" alt="">
+			</section>
+			<section>
+				<section>
+					<p>
+						Es una vulnerabilidad de seguridad que permite a un atacante inyectar en un sitio web código
+						malicioso del lado del cliente.<br>
+						Este código es ejecutado por las vícitmas y permite a los atacante eludir los controles de
+						acceso y hacerce pasar por usuarios.
+					</p>
+				</section>
+
+			</section>
+			<section>
+				<p>
+					Los ataques XSS suelen producirse cuando:
+					<ul>
+						<li>Los datos entran en una aplicación web no confiable</li>
+						<li>El contenido dinámico se envía a un usuario web sin ser validado como contenido malicioso</li>
+					</ul>
+				</p>
+			</section>
+			<section>
+				<section>
+					<h3>XSS Reflejado</h3>
+
+					Este tipo de ataque se caracteriza por no almacenar en el servidor el código utilizado. En su
+					lugar el código malicioso forma parte de la petición de la víctima que accede a la web. Esta web
+					incluye el código en la respuesta a la petición de la víctima, que se ejecuta en el destino
+				</section>
+
+				<section>
+					<img src="https://static.wixstatic.com/media/55f348_a3869c85c53e4b1497271d8e92237ccb~mv2.png" alt="">
+				</section>
+
+			</section>
+			<section>
+				<section>
+					<h3>XSS Persistente</h3>
+
+					Se da cuando el script se queda almacenado en el servidor. Cualquier usuario que acceda a la página no sospechará nada, sin
+					embargo, el código será interpretado por el navegador del visitante, ejecutando las
+					instrucciones que el atacante haya definido.
+				</section>
+				
+				<section>
+					<img src="https://static.wixstatic.com/media/55f348_234046d1e32c481895d79e6893ea1d45~mv2.png" alt="">
+				</section>
+			</section>
+
+			<section>
+				<h3>Samy</h3>
+				<img src="https://upload.wikimedia.org/wikipedia/en/c/c2/SamyIsMyHero.png" alt=""> <br>
+				20 horas alcanzó 1 millón de usuarios infectados. 
+			</section>
+			<section>
+				Muchas gracias por su atención!
+				<img src="https://media1.giphy.com/media/MCXgiBVDl8QtojG1fU/giphy.gif" alt="">
+				<a href="https://owasp.org/www-community/attacks/xss/">https://owasp.org/www-community/attacks/xss/</a>
+			</section>
+
+
+
+		</div>
+	</div>
+
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
+
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+		});
+	</script>
+</body>
+
+</html>
